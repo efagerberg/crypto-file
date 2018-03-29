@@ -2,7 +2,7 @@ import sys
 from setuptools import setup, find_packages
 
 setup(
-    name='neomodel-serializer',
+    name='crypto-file',
     version='0.0.1.dev1',
     description='Read encrypted files',
     long_description=open('README.rst').read(),
@@ -12,7 +12,7 @@ setup(
     url='http://github.com/efagerberg/crypto-file',
     packages=find_packages(exclude=('tests',)),
     keywords='encryption filehandling',
-    install_requires=['crypto==1.4.1'],
+    install_requires=['pycryptodome==3.5.1'],
     setup_requires=['pytest-runner']
         if any(x in ('pytest', 'test') for x in sys.argv) else [],
     tests_require=['mock', 'pytest', 'pytest-cov', 'pytest-xdist'],
@@ -27,5 +27,5 @@ setup(
         "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
-        "Topic :: Encrypption",
+        "Topic :: Encryption",
     ])
