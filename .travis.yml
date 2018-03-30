@@ -2,7 +2,4 @@ language: python
 sudo: required
 python:
   - "2.7"
-  - "3.4"
-  - "3.5"
-  - "3.6"
 script: "python setup.py test"
