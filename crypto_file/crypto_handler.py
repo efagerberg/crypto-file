@@ -14,7 +14,6 @@ class CryptoHandler:
         # Create a file handler
         if isinstance(fname, str):
             self.fObj = open(fname, mode)
-
         elif isinstance(fname, file):  # noqa: F821
             curr_mode = fname.mode
             if 'b' in curr_mode:
@@ -24,9 +23,8 @@ class CryptoHandler:
                 tempName = fname.name
                 fname.close()
                 self.fObj = open(tempName, curr_mode)
-
         else:
-            raise IOError
+            raise IOError("fname must be a string or file")
 
         self.mode = self.fObj.mode
 

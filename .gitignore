@@ -17,3 +17,4 @@ dist
 docker-compose.yml
 ve
 .vscode
+.coverage.*

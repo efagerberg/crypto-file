@@ -13,4 +13,4 @@ A file handler that encryptes files and can read them.
 Requirements
 ============
 
-- Python 2.7, 3.4+
+- Python 2.7
