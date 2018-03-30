@@ -1,3 +1,6 @@
+import hashlib
+import base64
+
 from Crypto.Cipher import AES
 from Crypto import Random
 
@@ -21,6 +24,18 @@ class Writer(CryptoHandler):
 
         # Initiate the encryptor
         self.cipher = AES.new(self.key, AES.MODE_CBC, self.iv)
+
+    def gen_key(self):
+        should_create_new_key = (self.key is None and
+                                 self.password is None)
+        if should_create_new_key:
+            self.key = hashlib.sha256(Random.new().read(32)).digest()
+            print('Encryption Key: {}\n'.format(base64.b64encode(self.key)))
+            # Have to create a new password from the key to use in IV
+            # - allows for message recovery using key file without password
+            self.password = base64.b64encode(self.key)
+        else:
+            super(Writer, self).gen_key()
 
     # Create the salt for the cipher
     def get_salt(self):
