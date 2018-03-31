@@ -3,10 +3,10 @@ from setuptools import setup, find_packages
 
 setup(
     name='crypto-file',
-    version='0.0.1.dev1',
+    version='1.0.0',
     description='Read encrypted files',
     long_description=open('README.rst').read(),
-    author='Evan Fagerberg',
+    author='Jordan Nickerson, Evan Fagerberg',
     author_email='adioevan@gmail.com',
     zip_safe=True,
     url='http://github.com/efagerberg/crypto-file',
