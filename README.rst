@@ -5,12 +5,28 @@ A file handlers that read and write encryptes files.
     :target: https://secure.travis-ci.org/efagerberg/crypto-file/
 
 
-.. image:: https://readthedocs.org/projects/crypto-file/badge/?version=latest
-    :alt: Documentation Status
-    :scale: 100%
-    :target: https://crypto-file.readthedocs.io/en/latest/?badge=latest
-
 Requirements
 ============
 
 - Python 2.7
+
+Usage
+=====
+
+Reading
+-------
+
+.. code-block:: python
+
+    from crypto_file import Reader
+    with Reader(fname='file.txt', password='Foo') as f:
+        f.read()
+
+Writing
+-------
+
+.. code-block:: python
+
+    from crypto_file import Writer
+    with Writer(fname='file.txt', password='Foo') as f:
+        f.write("Some secret stuff")
