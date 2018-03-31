@@ -10,7 +10,7 @@ from crypto_file import CryptoHandler
 class Writer(CryptoHandler):
 
     def __init__(self, fname, password=None, key=None, saveKey_file=None):
-        CryptoHandler.__init__(self, fname, password, key, 'wb')
+        super(Writer, self).__init__(fname, password, key, 'wb')
 
         # Write the key to the specified file
         if saveKey_file is not None:
@@ -69,4 +69,4 @@ class Writer(CryptoHandler):
             self.stream = self.bs * chr(self.bs)
 
         self.fObj.write(self.cipher.encrypt(self.stream))
-        self.fObj.close()
+        super(Writer, self).close()

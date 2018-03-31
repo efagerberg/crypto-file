@@ -104,7 +104,3 @@ class Reader(CryptoHandler):
         self.stream += self.chunk_processed
         self.streamLines += self.chunk_processed.count('\n')
         return 1
-
-    def close(self):
-        if not self.fObj.closed:
-            self.fObj.close()

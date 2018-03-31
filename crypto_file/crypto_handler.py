@@ -70,16 +70,19 @@ class CryptoHandler:
 
     def check_mode(self, mType):
         if not self.mode.startswith(mType):
-            print('Requested operation not compatible with current file mode')
-            raise IOError
+            msg = 'Requested operation not compatible with current file mode'
+            raise IOError(msg)
+
+    def close(self):
+        self.fObj.close()
 
     # Allow use in a with statement
     def __enter__(self):
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
-        self.fObj.close()
+        self.close()
 
     # Add a weak method to ensure open encryption streams are closed properly
     def __del__(self):
-        self.fObj.close()
+        self.close()
