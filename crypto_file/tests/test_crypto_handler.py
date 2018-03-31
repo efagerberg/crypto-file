@@ -10,6 +10,7 @@ from crypto_file.crypto_handler import CryptoHandler
 
 BASE_MOCK_PATH = 'crypto_file.crypto_handler'
 
+
 @pytest.fixture()
 def mock_open():
     with mock.patch('{}.open'.format(BASE_MOCK_PATH)) as m:
@@ -176,4 +177,3 @@ def test__del__closes_file(handler):
     del handler
 
     assert fObj.closed
-

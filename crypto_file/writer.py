@@ -44,8 +44,8 @@ class Writer(CryptoHandler):
         self.salt = Random.new().read(self.bs - len('Salted__'))
         self.fObj.write('Salted__' + self.salt)
 
-    def write(self, str):
-        self.stream += str
+    def write(self, s):
+        self.stream += s
         self.check_write_buffer()
 
     # Check if enough data is available to write an encrypted chunk

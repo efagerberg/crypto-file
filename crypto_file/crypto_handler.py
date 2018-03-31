@@ -7,7 +7,7 @@ from Crypto.Cipher import AES
 #  - Support for Reader and Writer objects
 
 
-class CryptoHandler:
+class CryptoHandler(object):
     def __init__(self, fname, password=None, key=None, mode=None):
 
         # Create a file handler
