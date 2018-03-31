@@ -49,7 +49,8 @@ class CryptoHandler(object):
             elif len(decoded_key) == 32:
                 self.key = decoded_key
             else:
-                raise NotImplementedError("Key not supported.")
+                msg = "Key {} not supported.".format(self.key)
+                raise NotImplementedError(msg)
         # Also support a password hashed into a key
         elif isinstance(self.password, str):
             self.key = hashlib.sha256(self.password).digest()

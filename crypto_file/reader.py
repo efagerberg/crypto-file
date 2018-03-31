@@ -9,10 +9,10 @@ class Reader(CryptoHandler):
 
         # Check for a key or password
         if key is None and password is None:
-            print('Need either a password or a key (file) for decryption')
-            raise NotImplementedError
+            msg = 'Need either a password or a key (file) for decryption'
+            raise ValueError(msg)
 
-        CryptoHandler.__init__(self, fname, password, key, 'rb')
+        super(Reader, self).__init__(fname, password, key, 'rb')
 
         # Verify the file object is in read mode
         self.check_mode('r')
@@ -69,8 +69,7 @@ class Reader(CryptoHandler):
 
     def seek(self, pos, mode=0):
         if not self.enableSeek:
-            print('seek disabled for this object')
-            raise NotImplementedError
+            raise NotImplementedError('seek disabled for this object')
 
         # - Absolute position: from the start of the file
         # + equivalent to a relative position plus the
@@ -87,11 +86,9 @@ class Reader(CryptoHandler):
                 self.read(pos)
 
         elif mode == 2:
-            print('Seek from EOF is not implemented')
-            raise IOError
+            raise IOError('Seek from EOF is not implemented')
         else:
-            print('Unknown mode requested for seek')
-            raise IOError
+            raise IOError('Unknown mode requested for seek')
 
     def decrypt_chunk(self):
         self.chunk_processed = self.chunk_unprocessed
