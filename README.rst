@@ -4,6 +4,10 @@ A file handlers that read and write encryptes files.
 .. image:: https://secure.travis-ci.org/efagerberg/crypto-file.png
     :target: https://secure.travis-ci.org/efagerberg/crypto-file/
 
+.. image:: https://coveralls.io/repos/github/efagerberg/crypto-file/badge.svg?branch=master
+    :target: https://coveralls.io/github/efagerberg/crypto-file?branch=master
+
+
 
 Requirements
 ============

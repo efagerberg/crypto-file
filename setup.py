@@ -12,7 +12,7 @@ setup(
     url='http://github.com/efagerberg/crypto-file',
     packages=find_packages(exclude=('tests',)),
     keywords='encryption filehandling',
-    install_requires=['pycrypto==2.6.1'],
+    install_requires=['pycryptodome==3.5.0'],
     setup_requires=['pytest-runner']
         if any(x in ('pytest', 'test') for x in sys.argv) else [],
     tests_require=['mock', 'pytest', 'pytest-cov', 'pytest-xdist'],
