@@ -100,4 +100,3 @@ class Reader(CryptoHandler):
             self.fileOpen = False
         self.stream += self.chunk_processed
         self.streamLines += self.chunk_processed.count('\n')
-        return 1
