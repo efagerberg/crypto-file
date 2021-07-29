@@ -1,4 +1,4 @@
-A file handlers that read and write encryptes files.
+A file handler that reads and writes encrypted files.
 
 
 .. image:: https://secure.travis-ci.org/efagerberg/crypto-file.png
